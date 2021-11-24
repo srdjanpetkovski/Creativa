@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+/***************
+variables
+**************/
+$fontFamilyPrimary: 'Poppins', sans-serif;
+$fontFamilySecondary: 'Josefin Sans', sans-serif;
+$fontSize: 16px;
+$text: #2c3136;
+$violet: #6b4e71; /* rgb(107, 78, 113)*/
+$black: #000;
+$gray: #3a4454; /*rgb(58, 68, 84)*/
+$white: #fff;
+$lightgray: #b3b3b3;
+$transition: 0.4s ease-in-out;
+$padding: 50px 0;
+
+/***************
+basic styles
+**************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: $fontFamilyPrimary;
+    font-size: $fontSize;
+    color: $text;
+    line-height: 1.6;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $fontFamilySecondary;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    color: $violet;
+}
+li {
+    list-style: none;
+}
+
+/***************
+mixins
+**************/
+@mixin flex($justify, $align, $direction) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+@mixin line {
+    background: $violet;
+    height: 3px;
+    border: none;
+    width: 30%;
+    display: inline-block;
+}
+
+/***************
+nav
+**************/
+nav {
+    background: rgba(245, 221, 221, 0.9);
+    padding: 9px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    div {
+        @include flex(space-between, center, row);
+        .logo {
+            font-style: italic;
+            font-size: 2.3rem;
+            letter-spacing: 1px;
+            span {
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+        ul {
+            @include flex(space-between, center, row);
+            li {
+                margin-right: 20px;
+                padding: 10px;
+                transition: $transition;
+                &:hover {
+                    background: $violet;
+                }
+                a {
+                    text-transform: uppercase;
+                    padding: 10px;
+                    font-size: 1.1rem;
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+            li:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+/***************
+header
+**************/
+header {
+    background-image: linear-gradient(to bottom, rgba(107, 78, 113, 0.9), rgba(107, 78, 113, 0.4)), url(img/header-background.png);
+    background-position: center;
+    background-size: cover;
+    padding: $padding;
+    height: 90vh;
+    .container {
+        @include flex(space-between, center, row);
+        padding-top: 80px;
+        div:first-child {
+            flex: 0 0 55%;
+            h1 {
+                color: $black;
+                font-weight: 400;
+                opacity: 0.9;
+                font-size: 4rem;
+                span {
+                    color: $white;
+                    font-style: italic;
+                }
+            }
+            p {
+                font-weight: 600;
+                font-size: 1.3rem;
+                color: $black;
+            }
+        }
+        div:last-child {
+            flex: 0 0 35%;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/***************
+services
+**************/
+.services {
+    padding: $padding;
+    @include flex(space-between, center, row);
+    article {
+        text-align: center;
+        flex: 0 0 30%;
+        h2 {
+            font-size: 1.9rem;
+        }
+        hr {
+            @include line;
+        }
+        p {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/***************
+skills
+**************/
+.skills {
+    background: linear-gradient(rgba(107, 78, 113, 0.9)), url(img/bg.png);
+    background-position: center;
+    background-size: cover;
+    padding: 130px 160px;
+    color: $white;
+    .container {
+        @include flex(space-around, center, row);
+        div {
+            h2 {
+                font-size: 3rem;
+                font-weight: 400;
+                span {
+                    font-style: italic;
+                    text-shadow: 0 0 5px $black;
+                }
+            }
+            ul {
+                li {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        div {
+            i {
+                font-size: 10rem;
+                text-shadow: 0 0 5px $black;
+            }
+        }
+    }
+}
+
+/***************
+slide
+**************/
+.slide {
+    background-image: url(img/slide2.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 65vh;
+}
+
+/***************
+footer
+**************/
+footer {
+    padding: $padding;
+    text-align: center;
+    background: #f5dddd;
+    h2 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+    hr {
+        height: 8px;
+        border: none;
+        background: $violet;
+        width: 4%;
+        display: inline-block;
+    }
+    .icons {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        a {
+            margin-right: 15px;
+            i {
+                font-size: 1.9rem;
+                transition: $transition;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        a:last-child {
+            margin-right: 0;
+        }
+    }
+    p {
+        a {
+            text-transform: uppercase;
+            &:hover {
+                color: gray;
+            }
+        }
+    }
+}

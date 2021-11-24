@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poppins:wght@400;600&display=swap");
+/***************
+variables
+**************/
+/* rgb(107, 78, 113)*/
+/*rgb(58, 68, 84)*/
+/***************
+basic styles
+**************/
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #2c3136;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #6b4e71;
+}
+
+li {
+  list-style: none;
+}
+
+/***************
+mixins
+**************/
+/***************
+nav
+**************/
+nav {
+  background: rgba(245, 221, 221, 0.9);
+  padding: 9px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+nav div .logo {
+  font-style: italic;
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+}
+
+nav div .logo span {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+nav div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+nav div ul li {
+  margin-right: 20px;
+  padding: 10px;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+nav div ul li:hover {
+  background: #6b4e71;
+}
+
+nav div ul li a {
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+nav div ul li a:hover {
+  color: #fff;
+}
+
+nav div ul li:last-child {
+  margin-right: 0;
+}
+
+/***************
+header
+**************/
+header {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(107, 78, 113, 0.9)), to(rgba(107, 78, 113, 0.4))), url(img/header-background.png);
+  background-image: linear-gradient(to bottom, rgba(107, 78, 113, 0.9), rgba(107, 78, 113, 0.4)), url(img/header-background.png);
+  background-position: center;
+  background-size: cover;
+  padding: 50px 0;
+  height: 90vh;
+}
+
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 80px;
+}
+
+header .container div:first-child {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 55%;
+          flex: 0 0 55%;
+}
+
+header .container div:first-child h1 {
+  color: #000;
+  font-weight: 400;
+  opacity: 0.9;
+  font-size: 4rem;
+}
+
+header .container div:first-child h1 span {
+  color: #fff;
+  font-style: italic;
+}
+
+header .container div:first-child p {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #000;
+}
+
+header .container div:last-child {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 35%;
+          flex: 0 0 35%;
+}
+
+header .container div:last-child img {
+  width: 100%;
+}
+
+/***************
+services
+**************/
+.services {
+  padding: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.services article {
+  text-align: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+}
+
+.services article h2 {
+  font-size: 1.9rem;
+}
+
+.services article hr {
+  background: #6b4e71;
+  height: 3px;
+  border: none;
+  width: 30%;
+  display: inline-block;
+}
+
+.services article p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.services article img {
+  width: 100%;
+}
+
+/***************
+skills
+**************/
+.skills {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(107, 78, 113, 0.9))), url(img/bg.png);
+  background: linear-gradient(rgba(107, 78, 113, 0.9)), url(img/bg.png);
+  background-position: center;
+  background-size: cover;
+  padding: 130px 160px;
+  color: #fff;
+}
+
+.skills .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.skills .container div h2 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.skills .container div h2 span {
+  font-style: italic;
+  text-shadow: 0 0 5px #000;
+}
+
+.skills .container div ul li {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.skills .container div i {
+  font-size: 10rem;
+  text-shadow: 0 0 5px #000;
+}
+
+/***************
+slide
+**************/
+.slide {
+  background-image: url(img/slide2.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 65vh;
+}
+
+/***************
+footer
+**************/
+footer {
+  padding: 50px 0;
+  text-align: center;
+  background: #f5dddd;
+}
+
+footer h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+footer hr {
+  height: 8px;
+  border: none;
+  background: #6b4e71;
+  width: 4%;
+  display: inline-block;
+}
+
+footer .icons {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+footer .icons a {
+  margin-right: 15px;
+}
+
+footer .icons a i {
+  font-size: 1.9rem;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+footer .icons a i:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+footer .icons a:last-child {
+  margin-right: 0;
+}
+
+footer p a {
+  text-transform: uppercase;
+}
+
+footer p a:hover {
+  color: gray;
+}
+/*# sourceMappingURL=style.css.map */
