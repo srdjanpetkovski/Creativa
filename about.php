@@ -1,13 +1,13 @@
 <?php include "partials/nav.php"; ?>
 
-    <!-- slide -->
+    <!-- about -->
     <section class="slide">
         
     </section>
-    <section>
+    <section class="about">
         <h2>Technologies that we used</h2>
         <hr>
-        <div class="technologies">
+        <div class="technologies container">
             <article>
                 <img src="img/about1.jpg" alt="">
                 <h4>Javascript</h4>

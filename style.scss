@@ -36,6 +36,9 @@ h1, h2, h3, h4, h5, h6 {
 .container {
     width: 80%;
     margin: 0 auto;
+    @media (max-width:767px) {
+        width: 90%;
+    }
 }
 a {
     text-decoration: none;
@@ -72,23 +75,36 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 5;
+    @media (max-width:767px) {
+        text-align: center;
+        padding: 5px 0;
+    }
     div {
         @include flex(space-between, center, row);
         .logo {
             font-style: italic;
             font-size: 2.3rem;
             letter-spacing: 1px;
+            @media (max-width:767px) {
+                margin: 0 auto;
+                font-size: 2rem;
+            }
             span {
                 font-weight: 700;
                 text-transform: uppercase;
             }
         }
         ul {
+            margin: 0 auto;
             @include flex(space-between, center, row);
             li {
                 margin-right: 20px;
                 padding: 10px;
                 transition: $transition;
+                @media (max-width:767px) {
+                    margin-right: 0;
+                    padding: 5px;
+                }
                 &:hover {
                     background: $violet;
                 }
@@ -117,16 +133,25 @@ header {
     background-size: cover;
     padding: $padding;
     height: 90vh;
+    @media (max-width:767px) {
+        text-align: center;
+    }
     .container {
         @include flex(space-between, center, row);
         padding-top: 80px;
         div:first-child {
             flex: 0 0 55%;
+            @media (max-width:767px) {
+                flex: 0 0 100%;
+            }
             h1 {
                 color: $black;
                 font-weight: 400;
                 opacity: 0.9;
                 font-size: 4rem;
+                @media (max-width:767px) {
+                    font-size: 2.5rem;
+                }
                 span {
                     color: $white;
                     font-style: italic;
@@ -136,10 +161,16 @@ header {
                 font-weight: 600;
                 font-size: 1.3rem;
                 color: $black;
+                @media (max-width:767px) {
+                    font-size: 1rem;
+                }
             }
         }
         div:last-child {
             flex: 0 0 35%;
+            @media (max-width:767px) {
+                flex: 0 0 100%;
+            }
             img {
                 width: 100%;
             }
@@ -156,6 +187,9 @@ services
     article {
         text-align: center;
         flex: 0 0 30%;
+        @media (max-width:767px) {
+            flex: 0 0 100%;
+        }
         h2 {
             font-size: 1.9rem;
         }
@@ -181,12 +215,18 @@ skills
     background-size: cover;
     padding: 130px 160px;
     color: $white;
+    @media (max-width:767px) {
+        padding: 60px 80px;
+    }
     .container {
         @include flex(space-around, center, row);
         div {
             h2 {
                 font-size: 3rem;
                 font-weight: 400;
+                @media (max-width:767px) {
+                    font-size: 2rem;
+                }
                 span {
                     font-style: italic;
                     text-shadow: 0 0 5px $black;
@@ -197,6 +237,10 @@ skills
                     font-size: 1.3rem;
                     font-weight: 600;
                     margin-bottom: 10px;
+                    @media (max-width:767px) {
+                        font-size: 1.1rem;
+                        margin-bottom: 20px;
+                    }
                 }
             }
         }
@@ -210,13 +254,98 @@ skills
 }
 
 /***************
-slide
+about
 **************/
 .slide {
     background-image: url(img/slide2.jpg);
     background-position: center;
     background-size: cover;
     height: 65vh;
+    @media (max-width:767px) {
+        height: 50vh;
+    }
+}
+.about {
+    text-align: center;
+    padding: $padding;
+    h2 {
+        font-size: 2.2rem;
+        line-height: 1;
+        @media (max-width:767px) {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+    }
+    hr {
+        border: none;
+        height: 9px;
+        background: #6b4e71;
+        width: 22%;
+        display: inline-block;
+    }
+    .technologies {
+        margin-top: 50px;
+        @include flex(space-between, center, row);
+        article {
+            flex: 0 0 30%;
+            border: 1px solid $gray;
+            border-radius: 5px;
+            box-shadow: 0 0 10px 5px $gray;
+            @media (max-width:767px) {
+                flex: 0 0 100%;
+            }
+            img {
+                width: 100%;
+            }
+            h4 {
+                font-size: 1.4rem;
+                margin-top: 15px;
+            }
+            p {
+                margin: 10px 40px 40px;
+            }
+        }
+    }
+}
+
+/***************
+contact
+**************/
+.header-contact {
+    background-image: linear-gradient(to bottom, rgba(107, 78, 113, 0.8), white), url(../img/novisad.jpg), url(img/novisad.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    @include flex(center, center, column);
+    h2 {
+        font-size: 2.7rem;
+        margin-bottom: 15px;
+    }
+    p {
+        text-align: center;
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+}
+.contact {
+    padding: $padding;
+    text-align: center;
+    @include flex(space-between, center, row);
+    article {
+        flex: 0 0 31%;
+        @media (max-width:767px) {
+            flex: 0 0 100%;
+        }
+        i {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: $violet;
+        }
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+    }
 }
 
 /***************
